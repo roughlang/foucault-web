@@ -21,12 +21,12 @@ jobs:
       - run:
           name: "Install NPM packages"
           command: |
-            cd app
+            cd foucault_web_app
             npm install
       - run:
           name: "Build assets"
           command: |
-            cd app
+            cd foucault_web_app
             npm run build
       - run:
           name: "Staging deploy"
