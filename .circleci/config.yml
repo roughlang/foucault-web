@@ -16,7 +16,7 @@ jobs:
       - run: "echo Staging deploy!"
       - add_ssh_keys:
           fingerprints:
-            - "fb:98:93:21:e8:f2:17:9d:79:e1:5e:cb:9f:f1:a8:f9"
+            - "d5:65:6b:1a:57:05:cc:79:f0:7d:d8:37:c1:25:a8:ed"
       - run: "sudo apt-get update && sudo apt-get install -y rsync"
       - run:
           name: "Install NPM packages"
