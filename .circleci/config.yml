@@ -30,13 +30,13 @@ jobs:
             npm run build
       - run:
           name: "Staging deploy"
-          command: "rsync -av --delete --exclude-from='rsync-exclude.txt' -e 'ssh -o StrictHostKeychecking=no -p 2222' ~/repo/ pinoko.jp-roughlang@ssh.lolipop.jp:/home/users/2/pinoko.jp-roughlang/web/roughlang.jp/stg/"
+          command: "rsync -av --delete --exclude-from='rsync-exclude.txt' -e 'ssh -o StrictHostKeychecking=no -p 2222' ~/repo/ pinoko.jp-roughlang@ssh.lolipop.jp:/home/users/2/pinoko.jp-roughlang/web/foucault/prod/foucault-web"
       - run:
           name: "Composer"
-          command: "ssh -p 2222 pinoko.jp-roughlang@ssh.lolipop.jp 'cd /home/users/2/pinoko.jp-roughlang/web/roughlang.jp/stg/app;/usr/local/php/8.2/bin/php composer.phar update'"
+          command: "ssh -p 2222 pinoko.jp-roughlang@ssh.lolipop.jp 'cd /home/users/2/pinoko.jp-roughlang/web/foucault/prod/foucault-web/foucault_web_app;/usr/local/php/8.2/bin/php composer.phar update'"
       - run:
           name: "Optimize"
-          command: "ssh -p 2222 pinoko.jp-roughlang@ssh.lolipop.jp 'cd /home/users/2/pinoko.jp-roughlang/web/roughlang.jp/stg/app;/usr/bin/bash optimizer.sh'"
+          command: "ssh -p 2222 pinoko.jp-roughlang@ssh.lolipop.jp 'cd /home/users/2/pinoko.jp-roughlang/web/foucault/prod/foucault-web/foucault_web_app;/usr/bin/bash optimizer.sh'"
   say-hello:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/configuration-reference/#executor-job
