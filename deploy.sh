@@ -11,23 +11,21 @@ function sample() {
   echo "foobar";
 }
 
-#!/bin/bash
-
 function increment_version() {
     # .version ファイルから現在のバージョンを読み込む
     version_str=$(cat .version)
 
-    # バージョン番号を '-' で分割して配列に格納する
-    IFS='-' read -ra ADDR <<< "$version_str"
+    # ハイフンより前の文字列を保持（例: foucault-web=0.01）
+    prefix=$(echo $version_str | sed 's/-.*//')
 
-    # 下位桁のバージョンを取得して数値に変換
-    minor_version=$((10#${ADDR[1]}))
+    # ハイフン以降の数字部分を取得（例: 00001）
+    number_part=$(echo $version_str | sed 's/.*-//')
 
-    # 下位桁をカウントアップ
-    new_minor_version=$(printf "%05d" $(($minor_version + 1)))
+    # 数字部分をカウントアップ
+    new_number_part=$(printf "%05d" $((10#$number_part + 1)))
 
     # 新しいバージョン番号を構築
-    new_version_str="${ADDR[0]}-${new_minor_version}"
+    new_version_str="${prefix}-${new_number_part}"
 
     # .version ファイルに新しいバージョンを書き込む
     echo $new_version_str > .version
@@ -38,4 +36,5 @@ function increment_version() {
 
 # 関数を呼び出す
 increment_version
+
 
