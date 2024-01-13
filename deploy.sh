@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function sample() {
-  echo "foobar";
+  echo "start to deploy foucault-web";
 }
 
 function increment_version() {
@@ -22,7 +22,13 @@ increment_version
 git add -A;
 git status;
 git commit -m "Update to $NEW_VERSION_STR";
-git push;
+
+# 引数があればそのブランチにpush、なければmainブランチにpush
+if [ -z "$1" ]; then
+    git push;
+else
+    git push origin $1;
+fi
 
 date "+%Y-%m-%d %a %H:%M:%S";
 echo $NEW_VERSION_STR;
