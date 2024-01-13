@@ -30,7 +30,7 @@ jobs:
             npm run build
       - run:
           name: "prod deploy"
-          command: "rsync -av --delete --exclude-from='rsync-exclude.txt' -e 'ssh -o StrictHostKeychecking=no -p 2222' ~/repo/ pinoko.jp-roughlang@ssh.lolipop.jp:/home/users/2/pinoko.jp-roughlang/web/foucault/prod/foucault-web"
+          command: "rsync -avv --progress --stats --itemize-changes --delete --exclude-from='rsync-exclude.txt' -e 'ssh -o StrictHostKeychecking=no -p 2222' ~/repo/ pinoko.jp-roughlang@ssh.lolipop.jp:/home/users/2/pinoko.jp-roughlang/web/foucault/prod/foucault-web"
       - run:
           name: "Composer"
           command: "ssh -p 2222 pinoko.jp-roughlang@ssh.lolipop.jp 'cd /home/users/2/pinoko.jp-roughlang/web/foucault/prod/foucault-web/foucault_web_app;/usr/local/php/8.2/bin/php composer.phar update'"
