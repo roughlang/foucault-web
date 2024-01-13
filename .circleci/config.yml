@@ -13,7 +13,7 @@ jobs:
       - checkout
       - node/install:
           node-version: "20.9.0"
-      - run: "echo Staging deploy!"
+      - run: "echo prod deploy!"
       - add_ssh_keys:
           fingerprints:
             - "d5:65:6b:1a:57:05:cc:79:f0:7d:d8:37:c1:25:a8:ed"
@@ -29,7 +29,7 @@ jobs:
             cd foucault_web_app
             npm run build
       - run:
-          name: "Staging deploy"
+          name: "prod deploy"
           command: "rsync -av --delete --exclude-from='rsync-exclude.txt' -e 'ssh -o StrictHostKeychecking=no -p 2222' ~/repo/ pinoko.jp-roughlang@ssh.lolipop.jp:/home/users/2/pinoko.jp-roughlang/web/foucault/prod/foucault-web"
       - run:
           name: "Composer"
