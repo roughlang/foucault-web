@@ -31,6 +31,13 @@ SSHでホスティングサーバーにログインして
 
 Laravel Sanctum
 
+## Database
+
+### phpmyadmin (local only)
+http://localhost:8555/pma/index.php
+
+
+
 
 ## foucault system
 

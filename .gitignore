@@ -17,3 +17,6 @@ foucault_web_app/yarn-error.log
 foucault_web_app/.fleet
 foucault_web_app/.idea
 foucault_web_app/.vscode
+
+## phpmyadmin
+foucault_web_app/public/pma/*
