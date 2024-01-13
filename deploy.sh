@@ -40,4 +40,7 @@ git add -A;
 git commit -m "Update to $GLOBAL_NEW_VERSION_STR";
 git push;
 
+echo date;
+echo $new_version_str;
+
 
