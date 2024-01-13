@@ -1,9 +1,6 @@
 #!/bin/bash
 
-git status;
-git add -A;
-git commit -m "auto message";
-git push;
+
 
 
 
@@ -36,5 +33,11 @@ function increment_version() {
 
 # 関数を呼び出す
 increment_version
+
+# gitの操作
+git status;
+git add -A;
+git commit -m "Update to $GLOBAL_NEW_VERSION_STR";
+git push;
 
 
