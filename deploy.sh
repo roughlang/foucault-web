@@ -11,24 +11,31 @@ function sample() {
   echo "foobar";
 }
 
-# バージョン番号をカウントアップする関数
+#!/bin/bash
+
 function increment_version() {
-  # .version ファイルから現在のバージョンを読み込む
-  version_str=$(cat .version)
+    # .version ファイルから現在のバージョンを読み込む
+    version_str=$(cat .version)
 
-  # バージョン番号を '-' で分割し、最後の部分を取得する
-  minor_version=$(echo $version_str | cut -d '-' -f 2)
+    # バージョン番号を '-' で分割して配列に格納する
+    IFS='-' read -ra ADDR <<< "$version_str"
 
-  # 下位桁を数値に変換し、1を加算する
-  new_minor_version=$(printf "%05d" $((10#$minor_version + 1)))
+    # 下位桁のバージョンを取得して数値に変換
+    minor_version=$((10#${ADDR[1]}))
 
-  # 新しいバージョン番号を作成
-  new_version_str=$(echo $version_str | sed "s/$minor_version/$new_minor_version/")
+    # 下位桁をカウントアップ
+    new_minor_version=$(printf "%05d" $(($minor_version + 1)))
 
-  # .version ファイルに新しいバージョンを書き込む
-  echo $new_version_str > .version
+    # 新しいバージョン番号を構築
+    new_version_str="${ADDR[0]}-${new_minor_version}"
 
-  # 新しいバージョン番号を出力
-  echo $new_version_str
+    # .version ファイルに新しいバージョンを書き込む
+    echo $new_version_str > .version
+
+    # 新しいバージョン番号を出力
+    echo $new_version_str
 }
+
+# 関数を呼び出す
 increment_version
+
