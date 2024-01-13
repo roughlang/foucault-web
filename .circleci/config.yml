@@ -16,7 +16,7 @@ jobs:
       - run: "echo prod deploy!"
       - add_ssh_keys:
           fingerprints:
-            - "d5:65:6b:1a:57:05:cc:79:f0:7d:d8:37:c1:25:a8:ed"
+            - "fb:98:93:21:e8:f2:17:9d:79:e1:5e:cb:9f:f1:a8:f9"
       - run: "sudo apt-get update && sudo apt-get install -y rsync"
       - run:
           name: "Install NPM packages"
@@ -30,7 +30,7 @@ jobs:
             npm run build
       - run:
           name: "prod deploy"
-          command: "rsync -avv --progress --stats --itemize-changes --delete --exclude-from='rsync-exclude.txt' -e 'ssh -o StrictHostKeychecking=no -p 2222' ~/repo/ pinoko.jp-roughlang@ssh.lolipop.jp:/home/users/2/pinoko.jp-roughlang/web/foucault/prod/foucault-web/"
+          command: "rsync -av --delete --exclude-from='rsync-exclude.txt' -e 'ssh -o StrictHostKeychecking=no -p 2222' ~/repo/ pinoko.jp-roughlang@ssh.lolipop.jp:/home/users/2/pinoko.jp-roughlang/web/foucault/prod/foucault-web/"
       - run:
           name: "Composer"
           command: "ssh -p 2222 pinoko.jp-roughlang@ssh.lolipop.jp 'cd /home/users/2/pinoko.jp-roughlang/web/foucault/prod/foucault-web/foucault_web_app;/usr/local/php/8.2/bin/php composer.phar update'"
