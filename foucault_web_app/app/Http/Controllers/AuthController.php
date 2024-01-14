@@ -3,26 +3,41 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
-use App\Http\Requests\RegisterRequest;
+// use App\Http\Requests\RegisterRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
+
+
+use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Validator;
+use App\Mail\EmailAuthenticate;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
   // ユーザー登録
-  public function register(RegisterRequest $request) {
-    $data = $request->validated();
+  public function register(Request $request) {
+
+    Log::channel('info')->info( $request );
+
+    $validated = $request->validate([
+      'name' => 'required|string|max:255'
+    ]);
 
     $user = User::create([
-      'name' => $data['name'],
-      'email' => $data['email'],
-      'password' => Hash::make($data['password']),
+      'name' => $request['name'],
+      'email' => $request['email'],
+      'password' => Hash::make($request['password']),
     ]);
 
     $token = $user->createToken('auth_token')->plainTextToken;
-
+    
     $cookie = cookie('token', $token, 60 * 24); // 1日
 
     return response()->json([

@@ -42,3 +42,6 @@ http://localhost:8555/pma/index.php
 ## foucault system
 
 https://app.diagrams.net/#G1lWjEdsa5USQDjqgzn9KVYhFq0ExEf2id
+
+
+php artisan make:controller AuthController
