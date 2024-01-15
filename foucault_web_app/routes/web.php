@@ -20,3 +20,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+## dev only
+Route::get('/sample/common_mail', [App\Http\Controllers\Sample\SampleCommonMailController::class, 'index'])->name('sample_common_mail');
