@@ -1,3 +1,4 @@
+#Laravel
 foucault_web_app/.phpunit.cache
 foucault_web_app/node_modules
 foucault_web_app/public/build
@@ -17,3 +18,6 @@ foucault_web_app/yarn-error.log
 foucault_web_app/.fleet
 foucault_web_app/.idea
 foucault_web_app/.vscode
+
+# react
+foucault_web_app/app/*

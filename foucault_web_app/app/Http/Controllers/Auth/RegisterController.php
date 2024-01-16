@@ -34,7 +34,7 @@ class RegisterController extends Controller
    *
    * @var string
    */
-  protected $redirectTo = RouteServiceProvider::HOME;
+  protected $redirectTo = RouteServiceProvider::TEMPAUTH;
   // protected $redirectTo = RouteServiceProvider::TEMP;
   protected $userUniqueId;
   protected $ipAddress;

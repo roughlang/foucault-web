@@ -9,3 +9,17 @@ rsync -av --delete --exclude-from='rsync-exclude.txt' -e 'ssh -o StrictHostKeych
 
 
 Laravel Sanctum
+
+
+# React
+
+Start react project (dev)
+```
+% cd foucault_react_app
+% npm start
+```
+
+Build for production
+```
+% npm run build
+```

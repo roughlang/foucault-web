@@ -2,16 +2,17 @@
 
 source ./.env
 
-#---------
-# Laravel
-#---------
+
 if [ $APP_ENV = 'local' ]; then
   echo 'ENV::'$APP_ENV;
+  # macbook dug
   find ./ -name "* [1-9]" -type d -exec rm -rf {} +;
   find ./ -name "* [1-9].*" -type f -exec rm -f {} +;
+  #---------
+  # Laravel
+  #---------
   # composer
   ./vendor/bin/sail php composer.phar update;
-  #laravel
   #./vendor/bin/sail artisan migrate;
   ./vendor/bin/sail artisan config:clear;
   ./vendor/bin/sail artisan cache:clear;
@@ -22,7 +23,12 @@ if [ $APP_ENV = 'local' ]; then
   # cp -pR ./public/assets/favicons ./public/public/assets;
   # cp -pR ./public/assets/img ./public/public/assets;
 
+  # Laravel front end
   npm run build;
+
+  # React
+  cp -R ../foucault_react_app/app/ ./public/app/
+  
   git status;
 
 elif [ $APP_ENV = 'dev' ]; then
