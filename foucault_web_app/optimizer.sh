@@ -25,6 +25,7 @@ if [ $APP_ENV = 'local' ]; then
 
   # Laravel front end
   cd ../foucault_react_app;
+  rm -fR app;
   npm run build;
   cd ../;
 
