@@ -30,7 +30,7 @@ if [ $APP_ENV = 'local' ]; then
   cd ../;
 
   # React
-  cp -R ../foucault_react_app/app/ ./public/app/
+  cp -pR foucault_react_app/app foucault_web_app/public/
   
   git status;
 
