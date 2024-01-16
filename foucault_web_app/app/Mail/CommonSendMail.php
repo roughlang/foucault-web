@@ -41,7 +41,7 @@ class CommonSendMail extends Mailable
     public function content(): Content
     {
       return new Content(
-        view: 'mail.CommonSendMail',
+        view: 'mails.CommonSendMail',
         with: [
           'body' => $this->body,
         ],

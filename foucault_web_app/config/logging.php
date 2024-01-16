@@ -52,6 +52,18 @@ return [
     */
 
     'channels' => [
+        /**
+         * customize
+         */
+        'auth' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/auth.log'),
+            'level' => 'info',
+            'replace_placeholders' => true,
+        ],
+        /**
+         * original
+         */
         'stack' => [
             'driver' => 'stack',
             'channels' => ['single'],

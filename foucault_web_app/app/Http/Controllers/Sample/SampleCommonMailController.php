@@ -14,9 +14,13 @@ class SampleCommonMailController extends Controller
    */
   public function index()
   {
+    # 送信先のエイリアスを作成
+    $tempid =mt_rand(100, 999);
+    $email = 'roughlangx+'.$tempid.'@gmail.com';
+
     $title = 'メールタイトル';
     $body = '送信テキスト';
-    Mail::to('roughlangx@gmail.com')
+    Mail::to($email)
       ->cc('cc-user@example.com')
       ->bcc('bcc-user@example.com')
       ->send(new CommonSendMail($title, $body));
