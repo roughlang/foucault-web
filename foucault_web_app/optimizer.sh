@@ -24,7 +24,9 @@ if [ $APP_ENV = 'local' ]; then
   # cp -pR ./public/assets/img ./public/public/assets;
 
   # Laravel front end
+  cd ../foucault_react_app;
   npm run build;
+  cd ../;
 
   # React
   cp -R ../foucault_react_app/app/ ./public/app/
