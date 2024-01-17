@@ -18,8 +18,12 @@ Start react project (dev)
 % cd foucault_react_app
 % npm start
 ```
+Local:            http://localhost:3000  
+On Your Network:  http://192.168.11.17:3000
 
 Build for production
 ```
 % npm run build
 ```
+
+
