@@ -8,7 +8,7 @@ import TestPage from './Pages/TestPage';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/app">
       <Routes>
       <Route path="/" element={<TopPage />} />
         {/* <Route path="/" element={

@@ -35,6 +35,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
  * APP_ENV local|dev|stg|prod
  */
 if (config('app.env') == 'local' || config('app.env') == 'dev') {
+
+  Route::get('/model/bootstrap', [App\Http\Controllers\Model\ModelController::class, 'bootstrap'])->name('model_bootstrap');
+
+
+
   /**
    * このページにアクセスするとサンプルメールが飛びます
    */

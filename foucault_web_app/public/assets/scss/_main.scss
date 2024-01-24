@@ -1,0 +1,25 @@
+@import "_bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
+
+/* boot strap5
+@media (max-width: 575px) {...}
+@media (min-width: 576px) and (max-width: 768px) {...}
+@media (min-width: 769px) and (max-width: 992px) {...}
+@media (min-width: 993px) and (max-width: 1200px) {...}
+@media (min-width: 1200px) and (max-width: 1399px) {...}
+@media (min-width: 1400px) {...}
+*/
+
+/*
+xs <576px
+sm ≥576px
+md ≥768px
+lg ≥992px
+xl ≥1200px
+*/
+
+@import "header";
+
+body {
+  // background: #000;
+}
