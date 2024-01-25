@@ -1,5 +1,10 @@
 # Foucault
 
+## Quick start
+
+cd /Users/yamakami_osamu/Documents/Roughlang/repos/foucault-web
+
+## index
 - Github
 - CircleCI
 
@@ -27,3 +32,9 @@ Build for production
 ```
 
 
+## Design
+
+awesome icon
+https://fontawesome.com/search
+
+https://icons.getbootstrap.jp/

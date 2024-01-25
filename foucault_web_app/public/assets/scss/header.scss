@@ -1,4 +1,64 @@
 
-head {
-   background: #ff0;
+.topbar {
+  height: 5px;
+  @media (max-width: 575px) { background: #880000;}
+  @media (min-width: 576px) and (max-width: 768px) { background: #333;}
+  @media (min-width: 769px) and (max-width: 992px) { background: #fff;}
+  @media (min-width: 993px) and (max-width: 1200px) { background: #000;}
+  @media (min-width: 1200px) and (max-width: 1399px) { background: #880000;}
+  @media (min-width: 1400px) { background: #c1c1c1;}
+}
+
+
+$nav-link: #000;
+$nav-link-visited: #000;
+$nav-link-hover: #000;
+$nav-link-active: #000;
+
+.navbar {
+  a:link, a:visited {
+    color: $nav-link;
+  }
+  a:hover, a:active {
+    color: $nav-link-hover;
+  }
+  .nav-contents {
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      img {
+        margin-right: 0.5em;
+      }
+      .site-name {
+        font-family: 'poppins';
+        display: block;
+        font-weight: normal;
+        color: #333;
+      }
+    }
+  }
+  
+  .nav-menus {
+    margin-top: 5px;
+    .dropdown {
+      .dropdown-menu {
+        li {
+          a:hover {
+            background: none;
+          }
+        }
+      }
+    }
+  }
+  .navbar-toggler {
+    border: none;
+    .navbar-toggler-icon {
+      background-color: #fff;
+    }
+  }
+  .navbar-toggler:focus {
+    border: none;
+    box-shadow: 0 0 0 0; /* menu outline*/
+  }
 }

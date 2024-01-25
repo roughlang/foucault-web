@@ -28,3 +28,6 @@ npm start
 
 # open finder folder
 open /Users/yamakami_osamu/Documents/Roughlang/repos/foucault-web/
+
+# Prepros
+open -a Prepros

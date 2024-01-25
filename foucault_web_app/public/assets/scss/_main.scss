@@ -18,8 +18,82 @@ lg ≥992px
 xl ≥1200px
 */
 
-@import "header";
+a:link, a:visited {
+  color: #4682b4;
+  text-decoration: none;
+}
+a:hover, a:active {
+  color: #0064b5;
+  text-decoration: underline;
+}
 
-body {
+/**/
+$nav-link: #55acee;
+$nav-link-visited: #55acee;
+$nav-link-hover: #55acee;
+$nav-link-active: #55acee;
+
+@font-face {
+  font-family: 'poppins';
+  src: url('/assets/webfonts/Poppins/Poppins-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/path-to-your-fonts/Helvetica-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* fix footer bottom */
+.footerFixed{
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #1d1b3f;
+  color: #fff;
+  text-align: center;
+}
+
+
+
+
+@import "header";
+@import "article";
+
+
+
+
+
+@import "footer";
+
+
+.contents-body {
   // background: #000;
+}
+
+
+
+/* button of to top */
+#page-top {
+  position: fixed; /* Always fixed to the viewport */
+  bottom: 10px;
+  right: 10px;
+  z-index: 100; /* Ensure it's above other elements */
+  cursor: pointer; /* Change the cursor to indicate it's clickable */
+  transition: background-color 0.3s; /* Smooth transition for background color */
+  opacity: 0.5;
+}
+#page-top:hover {
+  background-color: #f8f9fa; /* Light grey color on hover, you can choose any color */
+  opacity: 1;
 }
