@@ -6,17 +6,18 @@
 @section('content')
 @include('layouts.header')
 
-  <div class="breadcrumb">
-    <ul>
-      <li><a href="">Home</a></li>
-      <li><a href="">カテゴリー</a></li>
-      <li>このコンテンツ</li>
-    </ul>
-  </div>
+
 
 
 
   <div class="container contents-body">
+    <div class="breadcrumb">
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">カテゴリー</a></li>
+        <li>このコンテンツ</li>
+      </ul>
+    </div>
     <div class="row">
 
       {{-- 3カラムsample --}}

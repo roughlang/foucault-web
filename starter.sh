@@ -22,12 +22,13 @@ open -a Terminal /Users/yamakami_osamu/Documents/Roughlang/repos/foucault-web
 echo "Current directory:"
 pwd
 
-# foucault_react_app
-cd ../foucault_react_app
-npm start
-
 # open finder folder
 open /Users/yamakami_osamu/Documents/Roughlang/repos/foucault-web/
 
 # Prepros
 open -a Prepros
+
+# foucault_react_app
+cd ../foucault_react_app
+npm start
+

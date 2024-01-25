@@ -61,4 +61,22 @@ $nav-link-active: #000;
     border: none;
     box-shadow: 0 0 0 0; /* menu outline*/
   }
+
+  .auth-area {
+    // background: #ff0;
+    ul {
+      li {
+        display: inline-block;
+        img.avator-img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          border: 1px solid #c1c1c1;
+        }
+        .username {
+          color: #333;
+        }
+      }
+    }
+  }
 }

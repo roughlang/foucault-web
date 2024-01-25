@@ -33,6 +33,19 @@
           <a class="nav-link disabled">Disabled</a>
         </li>
       </ul>
+      
+      <div class="auth-area">
+        {{-- <ul>
+          <li><a href=""><span class="username">username</span></a></li>
+          <li><a href=""><img src="https://placekitten.com/300/300" class="avator-img"></a></li>
+        </ul> --}}
+        <ul>
+          <li><button type="button" class="btn btn-secondary btn-sm">Login</button></li>
+          <li><button type="button" class="btn btn-secondary btn-sm ml10">Signin</button></li>
+        </ul>
+      </div>
+
+
       {{-- <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
