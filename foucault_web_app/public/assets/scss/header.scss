@@ -23,6 +23,10 @@ $nav-link-active: #000;
     color: $nav-link-hover;
   }
   .nav-contents {
+    position: relative;
+    a:link, a:visited {
+      text-decoration: none;
+    }
     .navbar-brand {
       display: flex;
       align-items: center;
@@ -62,8 +66,29 @@ $nav-link-active: #000;
     box-shadow: 0 0 0 0; /* menu outline*/
   }
 
+  @media (max-width: 992px) {
+    .auth-area {
+      display: none;
+      background: #f00;
+    }
+    .auth-area-sp {
+      display: block;
+    }
+  }
+  @media (min-width: 993px) {
+    .auth-area {
+      display: block;
+    }
+    .auth-area-sp {
+      display: none;
+    }
+  }
+
   .auth-area {
     // background: #ff0;
+    a:link,a :visited {
+      text-decoration: none;
+    }
     ul {
       li {
         display: inline-block;
@@ -76,7 +101,51 @@ $nav-link-active: #000;
         .username {
           color: #333;
         }
+        a.login-link {
+          color: #333;
+        }
+        a.register-link {
+          color:#fff;
+        }
       }
     }
+  }
+  .auth-area-sp {
+    a:link,a :visited {
+      text-decoration: none;
+    }
+    position: absolute;
+    top: 2px;
+    right: 60px;
+    ul {
+      li {
+        display: inline-block;
+        img.avator-img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          border: 1px solid #c1c1c1;
+        }
+        .username {
+          color: #333;
+        }
+        a.login-link {
+          color: #333;
+        }
+        a.register-link {
+          color:#fff;
+        }
+      }
+    }
+  }
+}
+
+.modal-dialog-right {
+  margin-top: 76px;
+  position: fixed;
+  right: 0;
+  margin-right: 0;
+  .modal-content {
+    border-radius: 6px 0 0 6px;
   }
 }

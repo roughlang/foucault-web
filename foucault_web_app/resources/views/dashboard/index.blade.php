@@ -19,6 +19,7 @@
 
       {{-- 3カラムsample --}}
       <div class="col-sm-4">
+        <?php var_dump($user); ?>
         <h3>3カラムsample</h3>
         <ul>
           <li><a href="">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</a></li>

@@ -5,11 +5,37 @@
       <img src="/assets/favicons/apple-touch-icon-60x60.png" alt="Bootstrap" width="24" height="24">
       <div class="site-name">Site name</div>
     </a>
+    <div class="auth-area-sp">
+      @auth
+      <ul>
+        <li><a href="/dashboard"><span class="username">username</span></a></li>
+        <li><a href="/dashboard"><img src="https://placekitten.com/300/300" class="avator-img ml10"></a></li>
+        <li>
+          <a href="#" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+              <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      @endauth
+      @guest
+      <ul>
+        <li class="login">
+          <a href="/login" class="btn btn-outline-secondary btn-sm login-link" role="button" aria-disabled="true">Login</a>
+        </li>
+        <li class="register">
+          <a href="/register" class="btn btn-secondary btn-sm ml10 register-link" role="button" aria-disabled="true">Signin</a>
+        </li>
+      </ul>
+      @endguest
+    </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
       </span>
     </button>
+
     <div class="collapse navbar-collapse nav-menus" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -35,17 +61,30 @@
       </ul>
       
       <div class="auth-area">
-        {{-- <ul>
-          <li><a href=""><span class="username">username</span></a></li>
-          <li><a href=""><img src="https://placekitten.com/300/300" class="avator-img"></a></li>
-        </ul> --}}
+        @auth
         <ul>
-          <li><button type="button" class="btn btn-secondary btn-sm">Login</button></li>
-          <li><button type="button" class="btn btn-secondary btn-sm ml10">Signin</button></li>
+          <li><a href="/dashboard"><span class="username">username</span></a></li>
+          <li><a href="/dashboard"><img src="https://placekitten.com/300/300" class="avator-img ml10"></a></li>
+          <li>
+            <a href="#" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+              </svg>
+            </a>
+          </li>
         </ul>
+        @endauth
+        @guest
+        <ul>
+          <li class="login">
+            <a href="/login" class="btn btn-outline-secondary btn-sm login-link" role="button" aria-disabled="true">Login</a>
+          </li>
+          <li class="register">
+            <a href="/register" class="btn btn-secondary btn-sm ml10 register-link" role="button" aria-disabled="true">Signin</a>
+          </li>
+        </ul>
+        @endguest
       </div>
-
-
       {{-- <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
@@ -53,3 +92,37 @@
     </div>
   </div>
 </nav>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-right">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <ul>
+          <li><a class="dropdown-item" href="{{ route('logout') }}"
+            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+             {{ __('Logout') }}</a></li>
+             <li>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</li>
+        </ul>
+        
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+          @csrf
+        </form>
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+                                   </form>

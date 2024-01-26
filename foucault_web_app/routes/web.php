@@ -28,6 +28,7 @@ Route::get('/email_authentication', [App\Http\Controllers\Auth\AuthStaticPageSam
  * Gard
  */
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard_index');
 
 
 /**
