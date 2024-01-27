@@ -66,6 +66,7 @@ $nav-link-active: #55acee;
 
 @import "header";
 @import "article";
+@import "sitemap";
 @import "footer";
 
 .contents-body {
@@ -87,6 +88,13 @@ $nav-link-active: #55acee;
   opacity: 1;
 }
 
+
+/* bootstrap custmize */
+.card {
+  .card-header, .card-footer {
+    background: none;
+  }
+}
 
 
 .mt10 { margin-top: 10px; }

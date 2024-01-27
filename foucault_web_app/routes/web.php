@@ -13,9 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-  return view('welcome');
-});
+// Route::get('/', function () {
+//   return view('welcome');
+// });
+Route::get('/', [App\Http\Controllers\TopController::class, 'top'])->name('top');
 
 /**
  * Authentication and Login
@@ -30,6 +31,12 @@ Route::get('/email_authentication', [App\Http\Controllers\Auth\AuthStaticPageSam
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/dashboard', [App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard_index');
 
+/**
+ * Static pages
+ */
+Route::get('/sitemap', [App\Http\Controllers\StaticPagesController::class, 'sitemap'])->name('sitemap');
+
+
 
 /**
  * Local and dev only
@@ -38,8 +45,6 @@ Route::get('/dashboard', [App\Http\Controllers\Dashboard\DashboardController::cl
 if (config('app.env') == 'local' || config('app.env') == 'dev') {
 
   Route::get('/model/bootstrap', [App\Http\Controllers\Model\ModelController::class, 'bootstrap'])->name('model_bootstrap');
-
-
 
   /**
    * このページにアクセスするとサンプルメールが飛びます

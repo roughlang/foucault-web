@@ -39,10 +39,10 @@
     <div class="collapse navbar-collapse nav-menus" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="/sitemap">Site map</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -63,7 +63,7 @@
       <div class="auth-area">
         @auth
         <ul>
-          <li><a href="/dashboard"><span class="username">username</span></a></li>
+          <li><a href="/dashboard"><span class="username">@yield('username','no name')</span></a></li>
           <li><a href="/dashboard"><img src="https://placekitten.com/300/300" class="avator-img ml10"></a></li>
           <li>
             <a href="#" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -101,7 +101,7 @@
   <div class="modal-dialog modal-dialog-right">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Account</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -125,4 +125,4 @@
 </div>
 
 
-                                   </form>
+

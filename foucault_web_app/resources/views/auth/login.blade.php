@@ -1,4 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.app_web')
+@section('title', 'ログイン | Roughlang/ラフラング')
+@section('description', 'ログイン | Roughlang/ラフラング')
+@section('robots', 'index,follow')
+
+@section('content')
+@include('layouts.header')
 
 @section('content')
 <div class="container">
@@ -70,4 +76,5 @@
         </div>
     </div>
 </div>
+@include('layouts.footer')
 @endsection
