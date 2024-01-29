@@ -72,5 +72,7 @@
 
     </div>
   </div>
+
+<div class="height-adjust-400"></div>
 @include('layouts.footer')
 @endsection

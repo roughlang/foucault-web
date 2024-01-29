@@ -48,6 +48,9 @@
         <li class="nav-item">
           <a class="nav-link" href="/sitemap">Site map</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
@@ -59,6 +62,7 @@
             @if(config('app.env') == 'dev' || config('app.env') == 'local')
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="/model/bootstrap">/model/bootstrap</a></li>
+            <li><a class="dropdown-item" href="/app">ReactJS top</a></li>
             @endif
 
           </ul>
@@ -100,9 +104,6 @@
     </div>
   </div>
 </nav>
-
-
-
 
 <!-- Modal -->
 <div class="modal fade users-side-menu" id="userSitebarModal" tabindex="-1" aria-labelledby="userSitebarModalLabel" aria-hidden="true">

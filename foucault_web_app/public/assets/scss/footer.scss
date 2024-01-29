@@ -19,8 +19,24 @@
       }
     }
   }
+
+  .sns-list {
+    text-align: right;
+    ul {
+      li {
+        display: inline-block;
+        list-style: none;
+      }
+      li::after {
+        content: " | ";
+      }
+      li:last-child::after {
+        content: none;
+      }
+    }
+  }
   .copy-right {
-    margin-top: 30px;
+    margin-top: 20px;
   }
 }
 

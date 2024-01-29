@@ -83,11 +83,9 @@
         </ul>
       </div>
     </div>
-
-
-    
   </div>
 </div>
 
+<div class="height-adjust-200"></div>
 @include('layouts.footer')
 @endsection
