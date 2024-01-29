@@ -3,6 +3,15 @@
 @section('description', 'Bootstrapを使ったラフラングの開発用テンプレートです')
 @section('robots', 'noindex,nofollow')
 
+{{-- @section('username', $user->name) --}}
+@section('username')
+    @if($user && $user->name)
+        {{ $user->name }}
+    @else
+        {{-- ゲスト --}}
+    @endif
+@endsection
+
 @section('content')
 @include('layouts.header')
 

@@ -1,3 +1,7 @@
+@php
+  // var_dump($user);
+@endphp
+
 <div class="topbar"></div>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid nav-contents">
@@ -11,7 +15,7 @@
         <li><a href="/dashboard"><span class="username">username</span></a></li>
         <li><a href="/dashboard"><img src="https://placekitten.com/300/300" class="avator-img ml10"></a></li>
         <li>
-          <a href="#" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <a href="#" class="btn btn-link santen-menu" data-bs-toggle="modal" data-bs-target="#userSitebarModal">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
               <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
             </svg>
@@ -51,8 +55,12 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
+            
+            @if(config('app.env') == 'dev' || config('app.env') == 'local')
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="/model/bootstrap">/model/bootstrap</a></li>
+            @endif
+
           </ul>
         </li>
         <li class="nav-item">
@@ -66,7 +74,7 @@
           <li><a href="/dashboard"><span class="username">@yield('username','no name')</span></a></li>
           <li><a href="/dashboard"><img src="https://placekitten.com/300/300" class="avator-img ml10"></a></li>
           <li>
-            <a href="#" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <a href="#" class="btn btn-link santen-menu" data-bs-toggle="modal" data-bs-target="#userSitebarModal">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
                 <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
               </svg>
@@ -97,28 +105,44 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade users-side-menu" id="userSitebarModal" tabindex="-1" aria-labelledby="userSitebarModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-right">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Account</h1>
+        <h1 class="modal-title fs-5" id="userSitebarModalLabel">Account</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-
         <ul>
-          <li><a class="dropdown-item" href="{{ route('logout') }}"
-            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-             {{ __('Logout') }}</a></li>
-             <li>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</li>
+          <li><a href="/dashboard">ダッシュボード</a></li>
+          <li>ユーザー情報変更</li>
+          <li>履歴</li>
+          <li><a href="{{ route('logout') }}"
+            onclick="event.preventDefault();document.getElementById('logout-form').submit();">ログアウト</a></li>
         </ul>
-        
         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
           @csrf
         </form>
       </div>
       <div class="modal-footer">
-        
+        <div class="user">
+          <div class="avatar">
+            <a href="/dashboard"><img src="https://placekitten.com/300/300" class="avator-img ml10"></a>
+          </div>
+          <div class="username">
+            @php
+              if (isset($user) && !empty($user->user_unique_id)) {
+                list($name, $uniqueIDPostfix) = explode("@", $user->user_unique_id);
+                echo $name;
+              }
+            @endphp
+            <div class="uniqueidpostfix">
+              @if(isset($uniqueIDPostfix))
+                  @<span>{{ $uniqueIDPostfix }}</span>
+              @endif
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -24,7 +24,7 @@
   <div class="row">
     <h3 class="mb50">サイトマップ</h3>
     <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card">
+      <div class="card mb20">
         <div class="card-header">
           <h5>Card footer</h5>
         </div>
@@ -36,7 +36,7 @@
       </div>
     </div>
     <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card">
+      <div class="card mb20">
         <div class="card-header">
           <h5>Card footer</h5>
         </div>
@@ -48,7 +48,7 @@
       </div>
     </div>
     <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card">
+      <div class="card mb20">
         <div class="card-header">
           <h5>Card footer</h5>
         </div>
@@ -60,7 +60,7 @@
       </div>
     </div>
     <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card">
+      <div class="card mb20">
         <div class="card-header">
           <h5>Card footer</h5>
         </div>
@@ -72,7 +72,7 @@
       </div>
     </div>
     <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card">
+      <div class="card mb20">
         <div class="card-header">
           <h5>Card footer</h5>
         </div>

@@ -1,6 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.app_web')
+@section('title', '新規登録 | Roughlang/ラフラング')
+@section('description', '新規登録 | Roughlang/ラフラング')
+@section('robots', 'index,follow')
 
 @section('content')
+@include('layouts.header')
+
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-8">
@@ -74,4 +79,5 @@
     </div>
   </div>
 </div>
+@include('layouts.footer')
 @endsection

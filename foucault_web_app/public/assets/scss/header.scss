@@ -110,6 +110,8 @@ $nav-link-active: #000;
       }
     }
   }
+
+  /* SPのユーザー表示 */
   .auth-area-sp {
     a:link,a :visited {
       text-decoration: none;
@@ -135,7 +137,16 @@ $nav-link-active: #000;
         a.register-link {
           color:#fff;
         }
+        a.santen-menu {
+          // background: #ff0;
+          width: 30px;
+          text-align: center;
+        }
+        a.santen-menu:hover, a.santen-menu:active {
+          border: none;
+        }
       }
+
     }
   }
 }
@@ -147,5 +158,39 @@ $nav-link-active: #000;
   margin-right: 0;
   .modal-content {
     border-radius: 6px 0 0 6px;
+  }
+}
+
+.users-side-menu {
+  .modal-dialog {
+    .modal-content {
+      .modal-header {
+        // background: #ff0;
+      }
+      .modal-body {
+        // background: #f00;
+      }
+      .modal-footer {
+        display:initial;
+        .user {  
+          .avatar {
+            // background: #f00;
+            img.avator-img {
+              width: 120px;
+              height: 120px;
+              border-radius: 50%;
+              border: #888 solid 1px;
+            }
+          }
+          .username {
+            font-size: 25px;
+            .uniqueidpostfix {
+              font-size: 16px;
+              color: #777;
+            }
+          }
+        }
+      }
+    }
   }
 }
