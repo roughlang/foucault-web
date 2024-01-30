@@ -110,19 +110,21 @@ class RegisterController extends Controller
      * Email auth hash
      */
     $this->emailAuthHash = hash('sha3-512', rand(111111,999999).date("F j, Y \a\\t g:i A"));
-    $authURL = config('app.url').':'.config('app.port').'/email_authentication?hash='.$this->emailAuthHash.'&unique_id='.$uniqueID;
+    $authURL = config('app.url').'/email_authentication?hash='.$this->emailAuthHash.'&unique_id='.$uniqueID;
+    $sitename = config('app.name');
+    $expiration_mailauth = config('app.expiration_mailauth');
 
     /**
      * メールの送信
      */
     $title = 'メール認証';
     $body = <<< EOM
-<h1>Roughlang</h1>
+<h1>{$sitename}</h1>
 <p>
-この度は、ラフ・ラング ユーザー登録いただきありがとうございました。<br>
-以下のURLをクリックし、登録時より24時間以内にログインしてください。<br>
+この度は、{$sitename} ユーザー登録いただきありがとうございました。<br>
+以下のURLをクリックし、登録時より{$expiration_mailauth}時間以内にログインしてください。<br>
 <a href="{$authURL}" target="_blank">{$authURL}</a><br>
-24時間を超過した場合はログインできません。最初から登録をやり直してください。<br>
+{$expiration_mailauth}時間を超過した場合はログインできません。最初から登録をやり直してください。<br>
 </p>
 EOM;    
     Mail::to($data['email'])

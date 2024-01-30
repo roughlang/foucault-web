@@ -17,6 +17,10 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    /* use copy right */
+    'year' => date("Y"),
+    /* expiration mail authentication for register as new user */
+    'expiration_mailauth' => 24, // hour
 
     /*
     |--------------------------------------------------------------------------

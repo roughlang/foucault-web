@@ -6,13 +6,31 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 
 class AuthStaticPageSampleController extends Controller
 {
+  private $user;
+
+  public function __construct(Request $request) {
+    $this->middleware(function ($request, $next) {
+      /* check login */
+      if (Auth::check()) {
+        $this->user = Auth::user();
+      } else {
+        $this->user = null;
+      }
+      return $next($request);
+    });
+  }
+
   protected function registerTempComplete(Request $request)
   {
-
-    return view('auth/register_temp_complete');
+    return view('auth/register_temp_complete')->with([
+      'page' => 'emailAuthentication',
+      'user' => $this->user,
+      'datetime' => '2024-01-31 01:07',
+    ]);
   }
 
   //emailAuthenticatione
@@ -34,9 +52,12 @@ class AuthStaticPageSampleController extends Controller
           ->where('user_unique_id', $users->user_unique_id)
           ->update(['status' => 2]);
 
-        dd($getUniqueId);
+        return view('auth/emailAuthentication')->with([
+          'page' => 'emailAuthentication',
+          'user' => $this->user,
+          'datetime' => '2024-01-31 01:07',
+        ]);
 
-        return "emailAuthenticatione";
       } else {
         return redirect('/');
       }

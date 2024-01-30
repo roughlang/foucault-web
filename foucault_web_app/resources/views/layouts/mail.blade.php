@@ -36,23 +36,20 @@
   @yield('body')
   <div class="footer">
     <ul>
-      <li><a href="">Top page</a></li>
-      <li><a href="">Contact</a></li>
-      <li><a href="">Product</a></li>
+      <li><a href="{{config('app.url')}}/">Home</a></li>
+      <li><a href="{{config('app.url')}}/contact">Contact</a></li>
     </ul>
     <div>
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br>
-Roughlang (ラフ・ラング) https://roughlangp.com/<br>
+{{config('app.name')}} <br>
+{{config('app.url')}}<br>
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br>
-おかげさまで2024年2月に開店いたしました。<br>
-関わって頂いた皆様、本当にありがとうございます。<br>
-――――――――――――――――――――――――――――<br>
 機密情報に関する注意事項：このメールは、当サービスが指定した<br>
 受信者のみが利用することを目的としたものです。<br>
 万が一、あなたがこのメールの受信に関してお心当たりのない場合は、<br>
 直ちに当サービスへのご連絡とメールの破棄をお願いいたします。<br>
 ――――――――――――――――――――――――――――<br>
-Copyright (C) 2024 Roughlang, Inc. All Rights Reserved.<br>
+Copyright (C) {{config('app.year')}} {{config('app.name')}}, Inc. All Rights Reserved.<br>
     </div> 
   </div class="footer">
 </body>
