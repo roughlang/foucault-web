@@ -1,3 +1,10 @@
+@import "./Css/bootstrap.min.css";
+
+
+
+
+
+/* Default react css. delete after */
 .App {
   text-align: center;
 }
@@ -36,3 +43,8 @@
     transform: rotate(360deg);
   }
 }
+
+.footer {
+  background: #ff0;
+}
+

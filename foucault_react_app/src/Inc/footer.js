@@ -8,6 +8,8 @@ class Footer extends React.Component {
         <div className='footer-inner'>
           <div className='footer-logo'>
             <p>Learn to code, learn to creative.</p>
+            <button className="btn btn-primary">ボタン</button>
+
           </div>
           <ul className='footer-list'>
             <li>会社概要</li>
