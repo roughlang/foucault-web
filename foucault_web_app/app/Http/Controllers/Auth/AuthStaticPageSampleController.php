@@ -26,9 +26,16 @@ class AuthStaticPageSampleController extends Controller
 
   protected function registerTempComplete(Request $request)
   {
+    // ユーザーをログアウトさせる
+    Auth::logout();
+
+    // ここで、セッションを再生成することも推奨されています
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+
     return view('auth/register_temp_complete')->with([
       'page' => 'emailAuthentication',
-      'user' => $this->user,
+      'user' => null,
       'datetime' => '2024-01-31 01:07',
     ]);
   }

@@ -15,7 +15,21 @@
 @section('content')
 @include('layouts.header')
 
-仮登録完了
+<div class="container mt50">
+  <div class="row justify-content-center">
+    <div class="col-md-auto">
+      <div class="card register-temp-complete">
+        <div class="card-body">
+          <h5 class="card-title">仮登録完了</h5>
+          <p class="card-text">仮登録が完了しました。メールが送信されているので、指定のURLから本登録を完了させてください。</p>
+          <a href="/" class="card-link">Home</a>
+          <a href="/login" class="card-link">Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <div class="height-adjust-400"></div>
 @include('layouts.footer')
