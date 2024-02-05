@@ -83,9 +83,14 @@ $nav-link-active: #55acee;
   cursor: pointer; /* Change the cursor to indicate it's clickable */
   transition: background-color 0.3s; /* Smooth transition for background color */
   opacity: 0.5;
+  a {
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
 }
 #page-top:hover {
-  background-color: #f8f9fa; /* Light grey color on hover, you can choose any color */
   opacity: 1;
 }
 
