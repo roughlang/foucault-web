@@ -1,3 +1,33 @@
+@charset "UTF-8";
 .breadcrumb {
-  background: #f00;
+  font-size: 12px;
+}
+.breadcrumb ul {
+  margin-left: -30px;
+}
+.breadcrumb ul li {
+  list-style: none;
+  display: inline-block;
+  position: relative; /* 親要素を相対位置に設定 */
+  line-height: 1.5; /* 行の高さを設定（必要に応じて調整） */
+  margin-right: 25px;
+}
+.breadcrumb ul li::after {
+  margin-left: 6px;
+  margin-right: 10px;
+  content: "";
+  display: inline-block;
+  width: 16px; /* SVGの幅 */
+  height: 16px; /* SVGの高さ */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16"><path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/></svg>');
+  background-size: 16px 16px; /* 背景画像のサイズ */
+  color: #7fb7da;
+  vertical-align: middle; /* 縦方向の中央揃え */
+  position: absolute; /* 絶対位置指定 */
+  top: 50%; /* 親要素の中央に配置 */
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%); /* Y軸方向に50%移動して完全に中央揃えに */
+}
+.breadcrumb ul li:last-child::after {
+  content: none;
 }

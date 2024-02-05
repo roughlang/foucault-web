@@ -12,8 +12,8 @@
     <div class="auth-area-sp">
       @auth
       <ul>
-        <li><a href="/dashboard"><span class="username">username</span></a></li>
-        <li><a href="/dashboard"><img src="https://placekitten.com/300/300" class="avator-img ml10"></a></li>
+        <li><a href="/dashboard"><span class="username">@yield('username','no name')</span></a></li>
+        <li><a href="/dashboard"><img src="/assets/img/avatar/guest_user_avatar.png" class="avator-img ml10"></a></li>
         <li>
           <a href="#" class="btn btn-link santen-menu" data-bs-toggle="modal" data-bs-target="#userSitebarModal">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
@@ -76,7 +76,7 @@
         @auth
         <ul>
           <li><a href="/dashboard"><span class="username">@yield('username','no name')</span></a></li>
-          <li><a href="/dashboard"><img src="https://placekitten.com/300/300" class="avator-img ml10"></a></li>
+          <li><a href="/dashboard"><img src="/assets/img/avatar/guest_user_avatar.png" class="avator-img ml10"></a></li>
           <li>
             <a href="#" class="btn btn-link santen-menu" data-bs-toggle="modal" data-bs-target="#userSitebarModal">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
@@ -128,7 +128,7 @@
       <div class="modal-footer">
         <div class="user">
           <div class="avatar">
-            <a href="/dashboard"><img src="https://placekitten.com/300/300" class="avator-img ml10"></a>
+            <a href="/dashboard"><img src="/assets/img/avatar/guest_user_avatar.png" class="avator-img ml10"></a>
           </div>
           <div class="username">
             @php
