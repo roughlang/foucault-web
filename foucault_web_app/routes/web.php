@@ -36,7 +36,11 @@ Route::get('/dashboard', [App\Http\Controllers\Dashboard\DashboardController::cl
  */
 Route::get('/sitemap', [App\Http\Controllers\StaticPagesController::class, 'sitemap'])->name('sitemap');
 
-
+/**
+ * Contact
+ */
+Route::get('/contact', [App\Http\Controllers\Contact\ContactController::class, 'contact'])->name('contact');
+Route::post('/contact/sended', [App\Http\Controllers\Contact\ContactController::class, 'contactSended'])->name('contact_sended');
 
 /**
  * Local and dev only
