@@ -36,8 +36,14 @@ return [
     */
 
     'guards' => [
+        /* web page */
         'web' => [
             'driver' => 'session',
+            'provider' => 'users',
+        ],
+        /* api with token */
+        'api' => [
+            'driver' => 'jwt',
             'provider' => 'users',
         ],
     ],

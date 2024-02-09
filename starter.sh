@@ -15,6 +15,7 @@ done
 cd ./foucault_web_app
 docker-compose up -d
 docker-compose ps
+# for laravel, composer update, npm run build
 bash optimizer.sh
 
 open http://localhost:8555/
@@ -29,6 +30,7 @@ open /Users/yamakami_osamu/Documents/Roughlang/repos/foucault-web/
 open -a Prepros
 
 # foucault_react_app
-cd ../foucault_react_app
-npm start
-
+# cd ../foucault_react_app
+# npm start
+# cd ../foucault_react_app
+# npm run build
