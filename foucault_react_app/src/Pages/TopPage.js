@@ -10,6 +10,7 @@ function TopPage() {
       <h1>これはトップページです</h1>
 			<Link to="/test">テストページへ</Link>
       {/* ここに他のHTMLやコンポーネントを追加 */}
+      <div class="height-adjust-300"></div>
     </div>
   );
 }

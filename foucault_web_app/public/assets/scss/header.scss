@@ -66,10 +66,11 @@ $nav-link-active: #000;
     box-shadow: 0 0 0 0; /* menu outline*/
   }
 
+  /* ログインメニューの出しわけ */
   @media (max-width: 992px) {
     .auth-area {
       display: none;
-      background: #f00;
+      ul { display: none; }
     }
     .auth-area-sp {
       display: block;

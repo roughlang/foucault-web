@@ -4,20 +4,43 @@ import React from 'react';
 class Footer extends React.Component {
   render() {
     return (
-      <div className='footer'>
-        <div className='footer-inner'>
-          <div className='footer-logo'>
-            <p>Learn to code, learn to creative.</p>
-            <button className="btn btn-primary">ボタン</button>
-
-          </div>
-          <ul className='footer-list'>
-            <li>会社概要</li>
-            <li>採用</li>
-            <li>お問い合わせ</li>
-          </ul>
-        </div>
+      <div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <ul>
+          <li><a href="/sitemap">サイトマップ</a></li>
+          <li><a href="/contact">お問い合わせ</a></li>
+          <li><a href="">会社情報</a></li>
+        </ul>
       </div>
+      <div class="col-md-4">
+        <ul>
+          <li><a href="">サイトマップ</a></li>
+          <li><a href="">お問い合わせ</a></li>
+          <li><a href="">会社情報</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <ul>
+          <li><a href="">サイトマップ</a></li>
+          <li><a href="">お問い合わせ</a></li>
+          <li><a href="">会社情報</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="sns-list">
+    <ul>
+      <li><a href="">Facebook</a></li>
+      <li><a href="">Twitter</a></li>
+      <li><a href="">Instagram</a></li>
+      <li><a href="">YouTube</a></li>
+      <li><a href="">Line</a></li>
+    </ul>
+  </div>
+  <div class="copy-right">© 2024 DUMMY, INC. All Rights Reserved</div>
+</div>
     );
   }
 }
