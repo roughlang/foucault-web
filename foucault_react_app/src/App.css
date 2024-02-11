@@ -1,11 +1,14 @@
 @import "./Css/bootstrap.min.css";
 
+/* .topbar {
+  height: 5px;
+  background: #000;
+} */
 
 
 
 
-/* Default react css. delete after */
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -46,5 +49,5 @@
 
 .footer {
   background: #ff0;
-}
+} */
 
