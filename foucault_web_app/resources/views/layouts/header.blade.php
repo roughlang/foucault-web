@@ -151,15 +151,42 @@
 </div>
 
 
-
-
 <script>
+  /**
+   * PHPで認証の判定をしてその値をvueのプロパティーに格納。
+   * 認証のステータスが非ログイン時の場合は、トークンを削除する。
+   * 認証のステータスがログイン状態の場合は、トークンをローカルストレージに保存する。
+   * これはReact側から認証トークンを見るためである。というのはblad側でログインしたのに、Reactに移動するとログイン状態が維持できないので、
+   * あらかじめログイン時に認証トークンを保存しておく必要がある。 
+   */
   //axsiosで認証トークンを取得しておく
   Vue.createApp({
     data() {
       return {
         sample: 'Hello Vue.js 3',
+        // APIから取得したデータを格納するためのプロパティ
+        apiData: null,
       }
     },
+    mounted() {
+      // コンポーネントのマウント時にAPIからデータを取得
+      this.fetchDataFromApi();
+    },
+    methods: {
+      fetchDataFromApi() {
+        // Axiosを使用してAPIリクエストを行う
+        axios.get('https://your-api-url.com/data')
+          .then(response => {
+            // レスポンスデータをapiDataプロパティに格納
+            this.apiData = response.data;
+          })
+          .catch(error => {
+            console.error('APIからのデータ取得に失敗しました:', error);
+          });
+      }
+    }
   }).mount('#app')
 </script>
+
+
+
