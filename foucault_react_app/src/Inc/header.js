@@ -1,5 +1,5 @@
 import React from 'react';
-import { redirect } from 'react-router-dom';
+// import { redirect } from 'react-router-dom';
 
 
 class Header extends React.Component {
@@ -7,7 +7,6 @@ class Header extends React.Component {
     const navbarTogglerIconStyle = {
       background: 'none',
     };
-    const apiUrl = process.env.REACT_APP_API_URL;
     return (
 <div>
 <div className='topbar'></div>
@@ -20,10 +19,10 @@ class Header extends React.Component {
       <div className="auth-area-sp">
         <ul>
           <li className="login">
-            <a href="/login" className="btn btn-outline-secondary btn-sm login-link" role="button" aria-disabled="true">Login</a>
+            <a href="/login" className="btn btn-outline-secondary btn-sm login-link" aria-disabled="true">Login</a>
           </li>
           <li className="register">
-            <a href="/register" className="btn btn-secondary btn-sm ml10 register-link" role="button" aria-disabled="true">Signin</a>
+            <a href="/register" className="btn btn-secondary btn-sm ml10 register-link" aria-disabled="true">Signin</a>
           </li>
         </ul>
       </div>
@@ -45,9 +44,13 @@ class Header extends React.Component {
           <a class="nav-link" href="/contact">Contact</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+          {/* <a class="nav-link dropdown-toggle" href="javascript:void(0);#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
-          </a>
+          </a> */}
+          <button className="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+  Dropdown
+</button>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>

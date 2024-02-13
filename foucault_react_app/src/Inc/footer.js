@@ -11,34 +11,34 @@ class Footer extends React.Component {
         <ul>
           <li><a href="/sitemap">サイトマップ</a></li>
           <li><a href="/contact">お問い合わせ</a></li>
-          <li><a href="">会社情報</a></li>
+          <li><a href="https://example.com/">会社情報</a></li>
         </ul>
       </div>
       <div class="col-md-4">
         <ul>
-          <li><a href="">サイトマップ</a></li>
-          <li><a href="">お問い合わせ</a></li>
-          <li><a href="">会社情報</a></li>
+          <li><a href="https://example.com/">YouTube</a></li>
+          <li><a href="https://example.com/">Line</a></li>s
+          <li><a href="https://example.com/">利用規約</a></li>
         </ul>
       </div>
       <div class="col-md-4">
         <ul>
-          <li><a href="">サイトマップ</a></li>
-          <li><a href="">お問い合わせ</a></li>
-          <li><a href="">会社情報</a></li>
+          <li><a href="https://example.com/">Facebook</a></li>
+          <li><a href="https://example.com/">Twitter</a></li>
+          <li><a href="https://example.com/">Instagram</a></li>
         </ul>
       </div>
     </div>
   </div>
-  <div class="sns-list">
+  {/* <div class="sns-list">
     <ul>
-      <li><a href="">Facebook</a></li>
-      <li><a href="">Twitter</a></li>
-      <li><a href="">Instagram</a></li>
-      <li><a href="">YouTube</a></li>
-      <li><a href="">Line</a></li>
+      <li><a href="https://example.com/">Facebook</a></li>
+      <li><a href="https://example.com/">Twitter</a></li>
+      <li><a href="https://example.com/">Instagram</a></li>
+      <li><a href="https://example.com/">YouTube</a></li>
+      <li><a href="https://example.com/">Line</a></li>
     </ul>
-  </div>
+  </div> */}
   <div class="copy-right">© 2024 DUMMY, INC. All Rights Reserved</div>
 </div>
     );

@@ -105,6 +105,7 @@
   </div>
 </nav>
 
+<div id="app">@{{sample}}</div>
 <!-- Modal -->
 <div class="modal fade users-side-menu" id="userSitebarModal" tabindex="-1" aria-labelledby="userSitebarModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-right">
@@ -151,3 +152,14 @@
 
 
 
+
+<script>
+  //axsiosで認証トークンを取得しておく
+  Vue.createApp({
+    data() {
+      return {
+        sample: 'Hello Vue.js 3',
+      }
+    },
+  }).mount('#app')
+</script>

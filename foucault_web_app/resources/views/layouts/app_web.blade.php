@@ -63,21 +63,22 @@
   <link rel="manifest" href="/assets/favicons/manifest.json">
   <link rel="stylesheet" href="/assets/css/_main.css?mode=@php echo mt_rand(100,999); @endphp" media="screen">
   <script type="text/javascript" src="/assets/js/bootstrap5.min.js"></script>
-  <script type="text/javascript" src="/assets/js/jquery/jquery-3.6.0.min.js"></script>
+  {{-- <script type="text/javascript" src="/assets/js/jquery/jquery-3.6.0.min.js"></script> --}}
   <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js"></script>
-  
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
   {{-- <script type="text/javascript" src="/assets/resource/vue/vue-3.3.4.global.min.js"></script> --}}
   {{-- <script type="text/javascript" src="/assets/js/vue/vue.js"></script> --}}
   {{-- <script type="text/javascript" src="/assets/js/vue/axios.min.js"></script> --}}
   {{-- <script type="text/javascript" src="/assets/js/vue/axios.js"></script> --}}
-  {{-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> --}}  
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>  
   {{-- <script type="text/javascript" src="/assets/js/vue/vue.js"></script> --}}
   {{-- <script type="text/javascript" src="/assets/js/vue/axios.min.js"></script> --}}
   {{-- <script type="text/javascript" src="/assets/js/vue/axios.js"></script> --}}
   {{-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> --}}
   
-  <script type="text/javascript" src="/assets/js/vue/vue.js"></script>
-  <script type="text/javascript" src="/assets/js/vue/axios.js"></script>
+
 
   <title>@yield('title') | Roughlang</title>
   <meta name="description" content="@yield('description')">

@@ -15,13 +15,8 @@ done
 cd ./foucault_web_app
 docker-compose up -d
 docker-compose ps
-# for laravel, composer update, npm run build
-bash optimizer.sh
 
-open http://localhost:8555/
-open -a Terminal /Users/yamakami_osamu/Documents/Roughlang/repos/foucault-web
-echo "Current directory:"
-pwd
+
 
 # open finder folder
 open /Users/yamakami_osamu/Documents/Roughlang/repos/foucault-web/
@@ -29,8 +24,11 @@ open /Users/yamakami_osamu/Documents/Roughlang/repos/foucault-web/
 # Prepros
 open -a Prepros
 
-# foucault_react_app
-# cd ../foucault_react_app
-# npm start
-# cd ../foucault_react_app
-# npm run build
+open http://localhost:8555/
+open -a Terminal /Users/yamakami_osamu/Documents/Roughlang/repos/foucault-web
+echo "Current directory:"; pwd
+
+osascript -e 'tell application "Terminal" to do script "cd /Users/yamakami_osamu/Documents/Roughlang/repos/foucault-web/foucault_react_app && npm start"'
+
+# for laravel, composer update, npm run build
+bash optimizer.sh
