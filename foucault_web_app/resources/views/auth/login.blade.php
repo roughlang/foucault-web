@@ -123,17 +123,13 @@
   Vue.createApp({
     data() {
       return {
-        // フォーム入力データ
         email: '',
         password: '',
-        remember: false,
         sample: "foobar"
       }
     },
     methods: {
-      // ログインフォームの送信処理
       submitLoginForm() {
-        // Ajaxでの事前認証リクエスト
         console.log(this.email);
         console.log(this.password);
 
@@ -143,12 +139,12 @@
         axios.post('/api/auth/login', form)
 
         .then(response => {
+          // console.log(response.data);
+          // console.log(response.data.access_token);
 
-          console.log(response.data);
-          // console.log(response.data.success);
-          this.$refs.loginForm.submit();
-          if (response.data.success) {
-            // Ajax通信が成功したら、フォームを通常の認証ルートに送信
+
+          if (response.data) {
+            localStorage.setItem('app_token', JSON.stringify(response.data));
             this.$refs.loginForm.submit();
           } else {
             // エラー処理: ユーザーにエラーメッセージを表示など

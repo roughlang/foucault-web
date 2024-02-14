@@ -9,6 +9,12 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Validator;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Response;
+use PHPOpenSourceSaver\JWTAuth\Facades\JWTAuth;
+use Illuminate\Support\Facades\Log;
+
 class LoginController extends Controller
 {
 
@@ -39,29 +45,8 @@ class LoginController extends Controller
    */
   public function __construct()
   {
-      $this->middleware('guest')->except('logout');
+    $this->middleware('guest')->except('logout');
   }
-
-  // /**
-  //  * Validate the user login request.
-  //  *
-  //  * @param  \Illuminate\Http\Request  $request
-  //  * @return void
-  //  */
-  // protected function validateLogin(Request $request)
-  // {
-  //     $rules = [
-  //         'email' => 'required|string', // 例えば 'email' => 'required|email'
-  //         'password' => 'required|string|min:6', // パスワードの最小長を指定
-  //     ];
-
-  //     $customMessages = [
-  //         'required' => 'The :attribute field is required.',
-  //         // 他のカスタムメッセージをここに追加
-  //     ];
-
-  //     $request->validate($rules, $customMessages);
-  //   }
 
   protected function credentials(Request $request)
   {
@@ -81,10 +66,39 @@ class LoginController extends Controller
     /* login authentication */
     return array_merge( 
     
-      $request->only($this->username(), 'password'), // 標準の条件
+      $request->only($this->username(), 'password'), /* 標準の条件 */
       [
-        'status' => 2,
-      ] // 追加条件
+        'status' => 2, /* 追加条件 */
+      ] 
     );
   }
+
+  /**
+   * JWTからトークンを取得してCookieに格納しておく
+   * （と思ったけど、これ現状使っていなくて、JS側でLocalStorageで実装している）
+   * 2024-02-14
+   * 
+   * sendLoginResponse()
+   * respondWithToken()
+   */
+  protected function sendLoginResponse(Request $request)
+  {
+    $credentials = $request->only(['email', 'password']);
+    if (! $token = auth('api')->attempt($credentials)) {
+        return abort(401);
+    }
+    $token = $this->respondWithToken($token);     
+    Log::channel('auth')->info( $token );
+    return redirect($this->redirectTo);
+  }
+  
+  protected function respondWithToken($token)
+  {
+    return response()->json([
+      'access_token' => $token,
+      'token_type' => 'bearer',
+      'expires_in' => auth('api')->factory()->getTTL() * 60
+    ]);
+  }
+
 }
