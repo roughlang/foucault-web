@@ -105,7 +105,7 @@
   </div>
 </nav>
 
-<div id="app">@{{sample}}</div>
+
 <!-- Modal -->
 <div class="modal fade users-side-menu" id="userSitebarModal" tabindex="-1" aria-labelledby="userSitebarModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-right">
@@ -160,32 +160,32 @@
    * あらかじめログイン時に認証トークンを保存しておく必要がある。 
    */
   //axsiosで認証トークンを取得しておく
-  Vue.createApp({
-    data() {
-      return {
-        sample: 'Hello Vue.js 3',
-        // APIから取得したデータを格納するためのプロパティ
-        apiData: null,
-      }
-    },
-    mounted() {
-      // コンポーネントのマウント時にAPIからデータを取得
-      this.fetchDataFromApi();
-    },
-    methods: {
-      fetchDataFromApi() {
-        // Axiosを使用してAPIリクエストを行う
-        axios.get('https://your-api-url.com/data')
-          .then(response => {
-            // レスポンスデータをapiDataプロパティに格納
-            this.apiData = response.data;
-          })
-          .catch(error => {
-            console.error('APIからのデータ取得に失敗しました:', error);
-          });
-      }
-    }
-  }).mount('#app')
+  // Vue.createApp({
+  //   data() {
+  //     return {
+  //       sample: 'Hello Vue.js 3',
+  //       // APIから取得したデータを格納するためのプロパティ
+  //       apiData: null,
+  //     }
+  //   },
+  //   mounted() {
+  //     // コンポーネントのマウント時にAPIからデータを取得
+  //     this.fetchDataFromApi();
+  //   },
+  //   methods: {
+  //     fetchDataFromApi() {
+  //       // Axiosを使用してAPIリクエストを行う
+  //       axios.get('https://your-api-url.com/data')
+  //         .then(response => {
+  //           // レスポンスデータをapiDataプロパティに格納
+  //           this.apiData = response.data;
+  //         })
+  //         .catch(error => {
+  //           console.error('APIからのデータ取得に失敗しました:', error);
+  //         });
+  //     }
+  //   }
+  // }).mount('#app')
 </script>
 
 

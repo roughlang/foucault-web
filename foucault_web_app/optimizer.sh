@@ -5,6 +5,7 @@ source ./.env
 
 if [ $APP_ENV = 'local' ]; then
   echo 'ENV::'$APP_ENV;
+  cd "/Users/yamakami_osamu/Documents/Roughlang/repos/foucault-web/foucault_web_app"
   # macbook dug
   find ./ -name "* [1-9]" -type d -exec rm -rf {} +;
   find ./ -name "* [1-9].*" -type f -exec rm -f {} +;
