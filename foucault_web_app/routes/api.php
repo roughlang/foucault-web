@@ -29,3 +29,6 @@ Route::prefix('auth')->group(function () {
       Route::post('me', [App\Http\Controllers\API\AuthJWTController::class, 'me']);
   });
 });
+
+/* Test API */
+Route::get('/sample_api/test1', [App\Http\Controllers\API\SampleAPIController::class, 'test1'])->name('api_sample_api_test1');

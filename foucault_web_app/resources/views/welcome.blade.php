@@ -1,7 +1,12 @@
+@php
+$title = config('app.name').'（ラフ・ラング）';
+$description = 'スケベなことでしか考えない';
+@endphp
+
 @extends('layouts.app_web')
-@section('title', 'Roughlang（ラフラング）')
-@section('description', 'ラフラングの開発用テンプレートです。')
-@section('robots', 'noindex,nofollow')
+@section('title', $title )
+@section('description', $description)
+@section('robots', 'index,follow')
 
 {{-- @section('username', $user->name) --}}
 @section('username')

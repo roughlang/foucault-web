@@ -80,7 +80,7 @@
   
 
 
-  <title>@yield('title') | Roughlang</title>
+  <title>Top | @yield('title')</title>
   <meta name="description" content="@yield('description')">
 </head>
 <body>

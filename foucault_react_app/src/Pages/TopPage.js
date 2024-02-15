@@ -8,7 +8,11 @@ function TopPage() {
   return (
     <div>
       <h1>これはトップページです??</h1>
-			<Link to="/test">テストページへ</Link>
+      <ul>
+        <li><Link to="/test">テストページへ</Link></li>
+        <li><Link to="/test2">テストページ2へ</Link></li>
+        <li><Link to="/test3">テストページ3へ</Link></li>
+      </ul>
       {/* ここに他のHTMLやコンポーネントを追加 */}
       <div class="height-adjust-300"></div>
     </div>
