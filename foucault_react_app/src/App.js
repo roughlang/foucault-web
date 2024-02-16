@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import axios from 'axios';
 import './App.css';
 
 // Pages
@@ -11,44 +12,45 @@ import NotFoundPage from './Pages/NotFoundPage';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [accessToken, setAccessToken] = useState(''); // accessTokenを保持するための状態
-
-  const token = localStorage.getItem('app_token');
-  
-  const accsessToken = JSON.parse(token);
-  console.log(accsessToken.access_token);
-  console.log(accsessToken.expires_in);
-  console.log(accsessToken.token_type);
 
   useEffect(() => {
-    // トークンをlocalStorageから取得する
-    const token = localStorage.getItem('app_token');
     
-    // ユーザー情報を取得する関数
-    const fetchUserData = async () => {
-      try {
-        const response = await fetch('http://localhost:8555/api/auth/me', {
-          method: 'POST', // または 'GET', エンドポイントに依存する
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${accsessToken.access_token}` // トークンをヘッダーに含める
-          }
+    const me = process.env.REACT_APP_URL+'/api/auth/me';
+    console.log(me);
+
+    const token = localStorage.getItem('app_token');
+    // console.log(typeof(token));
+    if (token === null) {
+      console.log('nullnull');
+    }
+    if (typeof(token) === "object") {
+      console.log('objectobject');
+    }
+    if (token) {
+      console.log("have token");
+      console.log(token.access_token);
+      /* get information of user with access token */
+      const config = {
+        headers: { 'Authorization': `Bearer ${token}` }
+      };
+      axios.post('http://localhost:8555/api/auth/me', {}, config)
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        })
+        .finally(() => {
+          // 最後に実行する処理があればここに書きます
         });
+    }
+  },[]);
 
-        console.log(response);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
 
-        const data = await response.json();
-        // setUserData(data);
-      } catch (error) {
-        console.error('Fetching user data failed:', error);
-      }
-    };
+  
 
-    fetchUserData();
-  }, []);
+
+
 
   return (
     <Router basename="/app">
