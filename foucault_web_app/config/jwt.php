@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'jwt_name' => env('JWT_NAME', 'app_token'),
     /*
     |--------------------------------------------------------------------------
     | JWT Authentication Secret

@@ -18,24 +18,37 @@ function App() {
     const me = process.env.REACT_APP_URL+'/api/auth/me';
     console.log(me);
 
-    const token = localStorage.getItem('app_token');
+    const tokenString = localStorage.getItem(process.env.REACT_APP_JWT_NAME);
+    // const tokenString = localStorage.getItem('hoge');
     // console.log(typeof(token));
-    if (token === null) {
-      console.log('nullnull');
-    }
-    if (typeof(token) === "object") {
-      console.log('objectobject');
-    }
-    if (token) {
-      console.log("have token");
-      console.log(token.access_token);
+    // if (tokenString === null) {
+    //   console.log('トークン取得できませんでした。');
+    // }
+    // if (typeof(token) === "object") {
+    //   console.log('objectobject');
+    // }
+    if (tokenString) {
+      console.log("[App.js] got token!");
+      // console.log(typeof(tokenString));
+      // console.log(tokenString);
+
+      const access_token = JSON.parse(tokenString);
+      console.log(access_token.access_token);
+
       /* get information of user with access token */
       const config = {
-        headers: { 'Authorization': `Bearer ${token}` }
+        headers: { 'Authorization': `Bearer ${access_token.access_token}` }
       };
-      axios.post('http://localhost:8555/api/auth/me', {}, config)
+      console.log( process.env.REACT_APP_URL + '/api/auth/me' );
+      axios.post( process.env.REACT_APP_URL + '/api/auth/me', {}, config)
         .then(response => {
           console.log(response.data);
+          console.log(typeof(response.data));
+
+          console.log(response.data.id);
+          console.log(response.data.user_unique_id);
+          console.log(response.data.name);
+          console.log(response.data.email);
         })
         .catch(error => {
           console.error('Error:', error);
@@ -43,6 +56,8 @@ function App() {
         .finally(() => {
           // 最後に実行する処理があればここに書きます
         });
+    } else {
+      console.log('[App.js] can not get token.');
     }
   },[]);
 

@@ -11,7 +11,8 @@
     <div class="col-md-8">
       <div class="card">
         <div class="card-header">{{ __('Login') }}</div>
-        @{{sample}}
+        @{{sample}}<br>
+        {{ config('jwt.jwt_name') }}
 
           <div class="card-body">
             <form method="POST" action="{{ route('login') }}" novalidate @submit.prevent="submitLoginForm" ref="loginForm">
@@ -118,7 +119,6 @@
   });
 </script>
 
-
 <script>
   Vue.createApp({
     data() {
@@ -144,7 +144,7 @@
 
 
           if (response.data) {
-            localStorage.setItem('app_token', JSON.stringify(response.data));
+            localStorage.setItem('{{ config('jwt.jwt_name') }}', JSON.stringify(response.data));
             this.$refs.loginForm.submit();
           } else {
             // エラー処理: ユーザーにエラーメッセージを表示など
