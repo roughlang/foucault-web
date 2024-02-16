@@ -14,10 +14,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    
-    const me = process.env.REACT_APP_URL+'/api/auth/me';
-    console.log(me);
-
+    console.log(process.env.REACT_APP_JWT_NAME);
     const tokenString = localStorage.getItem(process.env.REACT_APP_JWT_NAME);
     // const tokenString = localStorage.getItem('hoge');
     // console.log(typeof(token));
