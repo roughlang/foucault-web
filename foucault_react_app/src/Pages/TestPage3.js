@@ -36,7 +36,8 @@ function TestPage3() {
     <div>
       <h1>これはLoginのテストページです</h1>
       <Link to="/">トップページへ</Link>
-      {token}
+      {token}<br />
+      {process.env.REACT_APP_JWT_NAME}
       {/* ここに他のHTMLやコンポーネントを追加 */}
     </div>
   );
