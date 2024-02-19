@@ -97,15 +97,6 @@ elif [ $APP_ENV = 'prod' ]; then
   /usr/local/php/8.2/bin/php artisan clear-compiled;
   /usr/local/php/8.2/bin/php artisan optimize;
   /usr/local/php/8.2/bin/php artisan view:cache;
-  # react build
-  cd ../foucault_react_app;
-  rm -fR app;
-  npm run echo:jwt-name:prod;
-  npm run build:prod;
-  cd ../;
-  # react copy
-  rm -fR foucault_web_app/public/app
-  cp -pR foucault_react_app/app foucault_web_app/public/
 
 else 
   echo 'There is no env.';
