@@ -6,7 +6,7 @@
   @media (min-width: 769px) and (max-width: 992px) { background: #fff;}
   @media (min-width: 993px) and (max-width: 1200px) { background: #000;}
   @media (min-width: 1200px) and (max-width: 1399px) { background: #880000;}
-  @media (min-width: 1400px) { background: #c1c1c1;}
+  @media (min-width: 1400px) { background: #880000;}
 }
 
 
@@ -69,7 +69,6 @@ $nav-link-active: #000;
   @media (max-width: 992px) {
     .auth-area {
       display: none;
-      background: #f00;
     }
     .auth-area-sp {
       display: block;
@@ -85,7 +84,6 @@ $nav-link-active: #000;
   }
 
   .auth-area {
-    // background: #ff0;
     display: block;
     position: absolute;
     top: 70%;
