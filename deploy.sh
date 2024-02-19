@@ -16,6 +16,15 @@ function increment_version() {
 # 関数を呼び出して新しいバージョンを取得
 increment_version
 
+# react build for prod
+cd foucault_react_app;
+rm -fR app;
+npm run echo:jwt-name:prod;
+npm run build:prod;
+cd ../;
+rm -fR foucault_web_app/public/app
+cp -pR foucault_react_app/app foucault_web_app/public/
+
 # gitの操作
 git add -A;
 git status;
