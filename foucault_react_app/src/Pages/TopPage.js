@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../AuthContext';
 // Include
 
 
 
 function TopPage() {
+  // const { currentUser, isLoggedIn } = useAuth();
   return (
     <div>
       <h1>これはトップページです??</h1>
@@ -15,6 +17,13 @@ function TopPage() {
       </ul>
       {/* ここに他のHTMLやコンポーネントを追加 */}
       <div class="height-adjust-300"></div>
+{/*       
+        {isLoggedIn ? (
+          <p>こんにちは、{currentUser.name}さん</p>
+        ) : (
+          <p>ログインしてください。</p>
+        )} */}
+      
     </div>
   );
 }
