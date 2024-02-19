@@ -20,19 +20,16 @@ if [ $APP_ENV = 'local' ]; then
   ./vendor/bin/sail artisan clear-compiled;
   ./vendor/bin/sail artisan optimize;
   ./vendor/bin/sail artisan view:cache;
-
-  # cp -pR ./public/assets/favicons ./public/public/assets;
-  # cp -pR ./public/assets/img ./public/public/assets;
-
-  # Laravel front end
+  # react build
   cd ../foucault_react_app;
   rm -fR app;
+  npm run echo:jwt-name:local;
   npm run build;
   cd ../;
-
-  # React
+  # eact copy
+  rm -fR foucault_web_app/public/app
   cp -pR foucault_react_app/app foucault_web_app/public/
-  
+  # local only
   git status;
 
 elif [ $APP_ENV = 'dev' ]; then
@@ -100,6 +97,16 @@ elif [ $APP_ENV = 'prod' ]; then
   /usr/local/php/8.2/bin/php artisan clear-compiled;
   /usr/local/php/8.2/bin/php artisan optimize;
   /usr/local/php/8.2/bin/php artisan view:cache;
+  # react build
+  cd ../foucault_react_app;
+  rm -fR app;
+  npm run echo:jwt-name:prod;
+  npm run build:prod;
+  cd ../;
+  # react copy
+  rm -fR foucault_web_app/public/app
+  cp -pR foucault_react_app/app foucault_web_app/public/
+
 else 
   echo 'There is no env.';
 fi
