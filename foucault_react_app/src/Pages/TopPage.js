@@ -16,7 +16,7 @@ function TopPage() {
         <li><Link to="/test3">テストページ3へ</Link></li>
       </ul>
       {/* ここに他のHTMLやコンポーネントを追加 */}
-      <div class="height-adjust-300"></div>
+      <div className="height-adjust-300"></div>
 {/*       
         {isLoggedIn ? (
           <p>こんにちは、{currentUser.name}さん</p>
