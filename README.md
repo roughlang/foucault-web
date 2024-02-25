@@ -4,7 +4,7 @@
 
 ### prod deploy
 
-CircleCIを通して、バージョンの変更`.version`、mainを引数にpush 
+CircleCIを通して、バージョンの変更`.version`、mainを引数にpushすると、https://foucault.roughlang.com/にデプロイする
 ```
 % cd /Users/yamakami_osamu/Documents/Roughlang/repos/foucault-web
 % bash deploy.sh main
