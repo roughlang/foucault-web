@@ -13,7 +13,7 @@ $description = 'スケベなことでしか考えない';
     @if($user && $user->name)
         {{ $user->name }}
     @else
-        {{-- ゲスト --}}
+        <!-- ゲスト -->
     @endif
 @endsection
 

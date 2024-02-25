@@ -23,5 +23,6 @@ class TopController extends Controller
 
   public function top() {
     return view('welcome')->with('user', $this->user);
+    // return view('welcome')->with('user', $this->user);
   }
 }
