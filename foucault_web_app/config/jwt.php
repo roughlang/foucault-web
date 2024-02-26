@@ -2,6 +2,7 @@
 
 return [
     'jwt_name' => env('JWT_NAME', 'app_token'),
+    // 'jwt_forcelogout_key' => env('JWT_FORCELOGOUT_KEY', '93db0f0b46497b7ff69d37e3472af34efdfe859b'),
     /*
     |--------------------------------------------------------------------------
     | JWT Authentication Secret

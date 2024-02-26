@@ -63,4 +63,21 @@ class AuthJWTController extends Controller
     ]);
   }
 
+
+  // public function forcelogout(Request $request) {
+  //   $ipAddress = request()->ip();
+  //   $jwt_forcelogout_key = config('jwt.jwt_forcelogout_key');
+
+  //   if ($jwt_forcelogout_key == $request->logoutkey) {
+  //     Auth::logout();
+  //     session()->flush();
+  //     session()->regenerate();
+  //     Log::channel('auth')->info( 'Forcelogout '. $ipAddress.': '.$jwt_forcelogout_key );
+  //   }
+    
+
+  //   return config('jwt.jwt_forcelogout_key');
+
+  // }
+
 }

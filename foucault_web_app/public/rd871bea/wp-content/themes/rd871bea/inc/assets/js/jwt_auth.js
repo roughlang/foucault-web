@@ -52,11 +52,11 @@ const app = Vue.createApp({
         axios.post('/api/auth/me', form, config)
         .then(response => {
           this.user = response.data;
-          // console.log(this.user.id);
-          // console.log(this.user.user_unique_id);
-          // console.log(this.user.name);
-          // console.log(this.user.email);
-          // console.log(this.user.created_at);
+          console.log(this.user.id);
+          console.log(this.user.user_unique_id);
+          console.log(this.user.name);
+          console.log(this.user.email);
+          console.log(this.user.created_at);
           if (this.user.id && this.user.user_unique_id) {
             this.login = true;
           } else {
