@@ -18,15 +18,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
 /* JWT */
 Route::prefix('auth')->group(function () {
   Route::post('login', [App\Http\Controllers\API\AuthJWTController::class, 'login']);
 
   Route::middleware('api')->group(function () {
-      Route::post('logout', [App\Http\Controllers\API\AuthJWTController::class, 'logout']);
-      Route::post('refresh', [App\Http\Controllers\API\AuthJWTController::class, 'refresh']);
-      Route::post('me', [App\Http\Controllers\API\AuthJWTController::class, 'me']);
+    Route::post('logout', [App\Http\Controllers\API\AuthJWTController::class, 'logout']);
+    Route::post('refresh', [App\Http\Controllers\API\AuthJWTController::class, 'refresh']);
+    Route::post('me', [App\Http\Controllers\API\AuthJWTController::class, 'me']);
+    Route::post('forcelogout', [App\Http\Controllers\API\AuthJWTController::class, 'forcelogout']);
   });
 });
 

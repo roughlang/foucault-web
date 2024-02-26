@@ -60,11 +60,11 @@
   <link rel="icon" type="image/png" sizes="24x24" href="/assets/favicons/icon-24x24.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/icon-32x32.png">
   <link rel="manifest" href="/assets/favicons/manifest.json">
-  <link rel="stylesheet" href="/assets/css/_main.css?mode=<?php echo mt_rand(100,999); ?>" media="screen">
-  <script src="/assets/js/bootstrap.js"></script>
-  <script src="/assets/js/vue/vue.js"></script>
-  <script src="/assets/js/vue/axios.js"></script>
-  <script src="/assets/js/main.js"></script>
+  <link rel="stylesheet" href="/assets/css/_main.css?mode=139" media="screen">
+  <script type="text/javascript" src="/assets/js/bootstrap5.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>  
 
   <!-- Open Graph tags -->
   <meta property="og:title" content="<?php echo $title; ?>">

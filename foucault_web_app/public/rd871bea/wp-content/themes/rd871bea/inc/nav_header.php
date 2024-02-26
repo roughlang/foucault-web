@@ -1,4 +1,5 @@
 <body>
+
 <div id="nav">
   <?php if ( env('APP_ENV') == 'local' || env('APP_ENV') == 'dev') : ?>
   <div class="device-bar"></div>
