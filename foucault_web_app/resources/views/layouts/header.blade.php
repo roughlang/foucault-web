@@ -64,7 +64,7 @@
             <li><a class="dropdown-item" href="/model/bootstrap">/model/bootstrap</a></li>
             <li><a class="dropdown-item" href="/app">ReactJS top</a></li>
             <li><a class="dropdown-item" href="/api/sample_api/test1">api sample_api test1</a></li>
-            
+            <li><a class="dropdown-item" href="/rd871bea/">wordpress rd871bea</a></li>
             @endif
 
           </ul>

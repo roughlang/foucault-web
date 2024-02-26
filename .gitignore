@@ -21,3 +21,6 @@ foucault_web_app/.vscode
 
 # react
 foucault_react_app/app/*
+
+# wordpress
+foucault_web_app/public/rd871bea/wp-config.php
