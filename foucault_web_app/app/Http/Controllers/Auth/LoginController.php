@@ -89,6 +89,14 @@ class LoginController extends Controller
     }
     $token = $this->respondWithToken($token);     
     Log::channel('auth')->info( $token );
+
+     /**
+      * wordpress 連携
+      */
+
+
+
+
     return redirect($this->redirectTo);
   }
   

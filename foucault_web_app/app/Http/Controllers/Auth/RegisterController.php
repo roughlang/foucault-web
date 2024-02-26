@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use App\Mail\CommonSendMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\DB;
 
 class RegisterController extends Controller
 {
@@ -139,6 +140,19 @@ EOM;
     $logLine = 'req:'.$this->ipAddress.' [/register (post)] User\'s temporary registration has been completed. '.$jsonData;
     Log::channel('auth')->info( $logLine );
 
+
+    /**
+     * wordpress
+     */
+    $wp_users = DB::table('wprd871bea_users')->get();
+    $wp_usermeta = DB::table('wprd871bea_usermeta')->get();
+    Log::channel('auth')->info( $wp_users );
+    
+    dd($wp_users, $wp_usermeta);
+
+    /**
+     * 新規ユーザー登録
+     */
     return User::create([
       'name' => $data['name'],
       'user_unique_id' => $this->userUniqueId,
