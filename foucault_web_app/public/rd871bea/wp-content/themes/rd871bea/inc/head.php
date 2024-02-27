@@ -7,15 +7,15 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+
     gtag('config', 'G-WLR91KBHV5');
   </script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="env" content="<?php echo env('APP_ENV'); ?>">
-  <meta name="robots" content="index,follow">
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-  <link rel="canonical" href="{{ request()->url() }}">
+  <meta name="env" content="local">
+  <meta name="robots" content="index,follow">  <meta name="csrf-token" content="adTcou2ZWujA5zD5OB6xBhODwyUIoWs3nOD3F1U0">
+  <link rel="canonical" href="http://localhost:8555">
   <meta name="msapplication-square70x70logo" content="/assets/favicons/site-tile-70x70.png">
   <meta name="msapplication-square150x150logo" content="/assets/favicons/site-tile-150x150.png">
   <meta name="msapplication-wide310x150logo" content="/assets/favicons/site-tile-310x150.png">
@@ -60,34 +60,15 @@
   <link rel="icon" type="image/png" sizes="24x24" href="/assets/favicons/icon-24x24.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/icon-32x32.png">
   <link rel="manifest" href="/assets/favicons/manifest.json">
-  <link rel="stylesheet" href="/assets/css/_main.css?mode=139" media="screen">
+  <link rel="stylesheet" href="/assets/css/_main.css?mode=710" media="screen">
   <script type="text/javascript" src="/assets/js/bootstrap5.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js"></script>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>  
-
-  <!-- Open Graph tags -->
-  <meta property="og:title" content="<?php echo $title; ?>">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="<?php echo $canonical; ?>">
-  <meta property="og:image" content="https://strage-roughlang-a1.s3.ap-northeast-1.amazonaws.com/system/wp-content/uploads/ogp/ogp.png">
-  <meta property="og:description" content="<?php echo $discription; ?>">
-  <meta property="og:site_name" content="System Blog | Roughlang">
-
-  <!-- (Optional) Facebook specific tag -->
-  <meta property="fb:app_id" content="YOUR_FACEBOOK_APP_ID">
-
-  <!-- (Optional) Twitter Card tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@aonuma_moriri">
-  <meta name="twitter:title" content="<?php echo $title; ?>">
-  <meta name="twitter:description" content="<?php echo $discription; ?>">
-  <meta name="twitter:image" content="https://roughlang.jp/assets/resource/img/ogp/ogp.png">
-
-  <link rel="canonical" href="<?php echo $canonical; ?>" />
-
-  <title><?php echo $title; ?></title>
-  <meta name="description" content="<?php echo $discription; ?>">
-  <?php wp_head(); ?>
+  <title>Top | Roughlang（ラフ・ラング）</title>
+  <meta name="description" content="スケベなことでしか考えない">
 </head>
+
+
+<?php wp_head(); ?>
 
