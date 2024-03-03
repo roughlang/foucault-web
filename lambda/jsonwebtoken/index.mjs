@@ -2,7 +2,7 @@
 import jwt from 'jsonwebtoken';
 
 // JWTトークンの検証に使用する公開キーやシークレットキー
-const YOUR_SECRET_KEY = 'your_secret_key_here';
+const YOUR_SECRET_KEY = '20240228';
 
 export async function handler(event) {
     // トークンを取得

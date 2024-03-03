@@ -43,9 +43,11 @@ class AuthJWTController extends Controller
      * ログアウトはWEBの方から行う
      * /logout
      */
-    abort(403);
+    // abort(403);
+    $cookie = \Cookie::forget('token');
+    return response()->json(['message' => 'Logged out'])->withCookie($cookie);
 
-    return true;
+    // return true;
   }
   public function refresh(Request $request) {
 
