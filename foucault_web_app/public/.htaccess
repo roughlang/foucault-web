@@ -6,6 +6,28 @@ AddType application/font-woff2 .woff2
     Header set Access-Control-Allow-Origin "*"
 </IfModule>
 
+# <IfModule mod_rewrite.c>
+#     <IfModule mod_negotiation.c>
+#         Options -MultiViews -Indexes
+#     </IfModule>
+
+#     RewriteEngine On
+
+#     # Handle Authorization Header
+#     RewriteCond %{HTTP:Authorization} .
+#     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+#     # Redirect Trailing Slashes If Not A Folder...
+#     RewriteCond %{REQUEST_FILENAME} !-d
+#     RewriteCond %{REQUEST_URI} (.+)/$
+#     RewriteRule ^ %1 [L,R=301]
+
+#     # Send Requests To Front Controller...
+#     RewriteCond %{REQUEST_FILENAME} !-d
+#     RewriteCond %{REQUEST_FILENAME} !-f
+#     RewriteRule ^ index.php [L]
+# </IfModule>
+
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
@@ -17,12 +39,28 @@ AddType application/font-woff2 .woff2
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
+    # WordPress でプレビュー表示する際に必要
+    RewriteCond %{QUERY_STRING} preview=true
+    RewriteRule ^index\.php$ /wp/index.php [L]
+
+    # WordPress の wp-json 対策
+    SetEnvIf Request_URI ^/wp-json/(.*) REST_ROUTE=$1
+    RewriteCond %{REQUEST_URI} ^/wp-json/
+    RewriteCond %{QUERY_STRING} (.*)$
+    RewriteRule . /wp/index.php?rest_route=/%{ENV:REST_ROUTE}&%1 [L]
+
+    # WordPress 化したいページをかっこの中に列記する
+    RewriteCond %{REQUEST_URI} ^/(blog)/
+    RewriteRule . /wp/index.php [L]
+
     # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_URI} !^wp/wp-admin.*$
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} (.+)/$
     RewriteRule ^ %1 [L,R=301]
 
-    # Send Requests To Front Controller...
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_URI} !^wp.*$
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]

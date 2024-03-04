@@ -56,8 +56,8 @@
             Dropdown
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="/app">React App (SPA)</a></li>
+            <li><a class="dropdown-item" href="/rd871bea/">wordpress</a></li>
             
             @if(config('app.env') == 'dev' || config('app.env') == 'local')
             <li><hr class="dropdown-divider"></li>
